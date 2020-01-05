@@ -2,15 +2,17 @@
 
 go version
 
-#go get github.com/grafana/grafana
-#cd $GOPATH/src/github.com/grafana/grafana
-#go run build.go setup
-#go run build.go build
+go get github.com/grafana/grafana
+cd $GOPATH/src/github.com/grafana/grafana
+git checkout tags/v6.3.7
 
-#yarn install --pure-lockfile
-#yarn dev
+go run build.go setup
+go run build.go build
 
-#mkdir -p data/plugins
-#cd data/plugins
-#[ -e 'ovh-warp10-datasource' ] && rm -rf 'ovh-warp10-datasource'
-#git clone https://github.com/ovh/ovh-warp10-datasource.git
+yarn install --pure-lockfile
+yarn dev
+
+mkdir -p data/plugins
+cd data/plugins
+[ -e 'ovh-warp10-datasource' ] && rm -rf 'ovh-warp10-datasource'
+git clone https://github.com/ovh/ovh-warp10-datasource.git
